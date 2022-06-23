@@ -3,7 +3,7 @@ import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Curso
+from .models import Curso, Estudiante
 
 # Create your views here.
 
@@ -33,8 +33,14 @@ def profesores(request):
     return render(request,"ProyectoCoderApp/profesores.html",{})
 
 def estudiantes(request):
-    return render(request,"ProyectoCoderApp/estudiantes.html",{})
+    estudiantes= Estudiante.objects.all()
 
+    return render(request,"ProyectoCoderApp/estudiantes.html",{"estudiantes":estudiantes})
+
+def crear_curso(request):
+    # return HttpResponse("Vista de cursos")
+    return render(request,"ProyectoCoderApp/formulario_curso.html",{})
+    
 def cursos(request):
     # return HttpResponse("Vista de cursos")
 

@@ -24,6 +24,7 @@ urlpatterns = [
 
     # URLS de ProyectoCoderApp
     path('coderapp/', include('ProyectoCoderApp.urls')),
+   
 ]
 
 # muchas aplicaciones
